@@ -36,4 +36,6 @@ A special thanks is given to the creators of Rojo, Selene and StyLua for creatin
 * This implementation assumes you have a fully managed Rojo workflow. The automated testing would theoretically work on a partially managed Rojo workflow (provided your test did not reference non Rojo managed Instances) but deployment will not.
 * The python wrappers for Open Cloud inside [/scripts/python](/scripts/python) were written for this demonstration and are not intended as clients for general use
 * The Engine Open Cloud API for Executing Luau is currently limited to one concurrent request per universe. The GitHub actions config in this example accounts for this by creating a [concurrency group](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs). This will prevent Luau execution jobs from attempting to run concurrently and failing.
-    * Note, we aim to lift this limit in the future.
+  * Note, we aim to lift this limit in the future.
+* An example PR is given showing CI checks failing: [example](https://github.com/Roblox/place-ci-cd-demo/pull/1)
+* Because the CI/CD pipeline requires an Open Cloud API key to run, more work is required for use in Open Source projects where fork maintainers will have to create these places, variables and API keys themselves for checks to run correctly on their forks.
