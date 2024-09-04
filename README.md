@@ -23,11 +23,10 @@ A special thanks is given to the creators of Rojo, Selene and StyLua for creatin
     - `universe.places:write` 
     - `universe.place.luau-execution-session:write`
 3. Save this API key as a [GitHub Actions Secret](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions) named `ROBLOX_API_KEY` 
-4. Create G
-5. Create [GitHub Actions Repository Variables](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables) for the following values 
+4. Create [GitHub Actions Repository Variables](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables) for the following values 
     - `ROBLOX_PRODUCTION_UNIVERSE_ID`, `ROBLOX_PRODUCTION_PLACE_ID`
     - `ROBLOX_TEST_UNIVERSE_ID`, `ROBLOX_TEST_PLACE_ID`
-6. (Optional) add [GitHub branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) to validate the checks have been passed on PRs before they have been merged
+5. (Optional) add [GitHub branch protection rules](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule) to validate the checks have been passed on PRs before they have been merged
 
 ## Notes
 
