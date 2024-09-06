@@ -28,11 +28,37 @@ local function deserialize_directory(directory, parent)
 	end
 end
 
+local function publish_package_asset(instance)
+	local ws = game.Workspace
+	local as = game.AssetService
+
+	local requestParameters = {
+		CreatorId = 1253904491,
+		CreatorType = Enum.AssetCreatorType.User,
+		Name = "Today",
+		Description = "hack your game",
+	}
+
+	local result, id
+	print("creating asset")
+	local success, err = pcall(function()
+		result, id = as:CreateAssetVersionAsync(instance, Enum.AssetType.Model, 138858606311312, requestParameters)
+	end)
+
+	if success then
+		print(result, id)
+	else
+		warn(err)
+	end
+end
+
 local function main()
 	local root = read_json(json_string)
 	local model = Instance.new("Model")
+	model.Name = "Target"
 	model.Parent = game.Workspace
 	deserialize_directory(root, model)
+	publish_package_asset(model)
 end
 
 main()
