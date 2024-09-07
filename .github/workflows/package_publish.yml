@@ -71,7 +71,7 @@ jobs:
       - uses: leafo/gh-actions-luarocks@v4
       # Install lua packages
       - name: install a lfs
-        run: luarocks install lfs
+        run: luarocks --version
       - name: Install lua
         run: luarocks install dkjson
       - name: Serialize Luau Lib and Write to Luau Task File
