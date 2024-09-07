@@ -83,19 +83,3 @@ jobs:
           ROBLOX_UNIVERSE_ID: ${{ vars.ROBLOX_TEST_UNIVERSE_ID }}
           ROBLOX_PLACE_ID: ${{ vars.ROBLOX_TEST_PLACE_ID }}
           TEST_TASK_FILE: tasks/packagePublish.luau
-
-  # deployment:
-  #   name: Deployment
-  #   runs-on: ubuntu-latest
-  #   needs: [install-tools, linting, formatting, luau-tests] # Only runs if all checks passed
-  #   if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/production' }} # Only runs on pushes to production
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3.3.0
-  #     - name: Restore cached Foreman tools
-  #       uses: actions/cache@v3.2.3
-  #       with:
-  #         path: ~/.foreman
-  #         key: tools-${{ hashFiles('foreman.toml') }}
-  #     - name: Publish
-  #       run: $HOME/.foreman/bin/rojo upload default.project.json --api_key ${{ secrets.ROBLOX_API_KEY }} --universe_id ${{ vars.ROBLOX_PRODUCTION_UNIVERSE_ID }} --asset_id ${{ vars.ROBLOX_PRODUCTION_PLACE_ID }}
