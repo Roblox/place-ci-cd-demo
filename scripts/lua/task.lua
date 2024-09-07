@@ -39,14 +39,26 @@ local function publish_package_asset(instance)
 		Description = "hack your game",
 	}
 
-	local result, id
-	print("creating asset")
+	local result, assetId
+	print("creating an asset")
 	local success, err = pcall(function()
-		result, id = as:CreateAssetVersionAsync(instance, Enum.AssetType.Model, 138858606311312, requestParameters)
+		result, assetId = as:CreateAssetAsync(instance, Enum.AssetType.Model, requestParameters)
 	end)
 
 	if success then
-		print(result, id)
+		print(result, assetId)
+	else
+		warn(err)
+	end
+	
+	print("creating a new version")
+	local versionId
+	local success, err = pcall(function()
+		result, versionId = as:CreateAssetVersionAsync(instance, Enum.AssetType.Model, assetId, requestParameters)
+	end)
+
+	if success then
+		print(result, versionId)
 	else
 		warn(err)
 	end
