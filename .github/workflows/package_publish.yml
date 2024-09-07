@@ -68,7 +68,7 @@ jobs:
           path: ~/.foreman
           key: tools-${{ hashFiles('foreman.toml') }}
       - name: Install lua
-        run: sudo apt install lua5.3
+        run: ./scripts/shell/install-lua-lib-dependencies.sh
       - name: Serialize Luau Lib and Write to Luau Task File
         run: lua scripts/lua/serialize.lua ./scripts/lua/lib
       - name: Publish Package
