@@ -67,8 +67,13 @@ jobs:
         with:
           path: ~/.foreman
           key: tools-${{ hashFiles('foreman.toml') }}
+      - uses: leafo/gh-actions-lua@v9
+      - uses: leafo/gh-actions-luarocks@v4
+      # Install lua packages
+      - name: install a lfs
+        run: luarocks install lfs
       - name: Install lua
-        run: ./scripts/shell/install-lua-lib-dependencies.sh
+        run: luarocks install dkjson
       - name: Serialize Luau Lib and Write to Luau Task File
         run: lua scripts/lua/serialize.lua ./scripts/lua/lib
       - name: Publish Package
