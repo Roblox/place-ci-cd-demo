@@ -29,6 +29,11 @@ sudo make install
 # Verify the installation
 luarocks --version
 
+luarocks install luafilesystem
+luarocks install dkjson
+
+luarocks list
+
 # Clean up
 cd ..
 rm -rf "luarocks-$LUAROCKS_VERSION"*
