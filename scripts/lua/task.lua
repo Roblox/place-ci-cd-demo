@@ -5,7 +5,7 @@ end
 local function create_module_script(name, content)
 	local module_script = Instance.new("ModuleScript")
 	module_script.Name = name
-	--module_script.Source = content
+	module_script.Source = content
 	return module_script
 end
 
